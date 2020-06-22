@@ -1,0 +1,29 @@
+<%- include("partials/header"); -%>
+
+
+<h1>Home</h1>
+<p><%=startingContent%></p>
+<div class="container">
+  <div class="row">
+    <% postArray.forEach(function (post){ %>
+      <div class="card col-3" style="width: 15rem; height: 20rem;">
+        <div class="card-body">
+          <h3 class="card-title"><%= post.title %></h3>
+          <h6 class="card-author mb-2 text-muted">by <%= post.author %></h6>
+          <p>
+            <%= post.content.substring(0,170) + " ... " %>
+            <a href="/posts/<%=post.title.toLowerCase()%>">Read more</a>
+          </p>
+        </div>
+      </div>
+    <% }) %>  
+  </div>
+</div>
+
+
+
+
+
+
+
+<%- include("partials/footer"); -%>
